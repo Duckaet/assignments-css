@@ -1,0 +1,46 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bg Colour</title>
+    <style>
+    body {
+        text-align: center;
+    }
+    label {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-style: italic;
+        color: black;
+    }
+
+    #container {
+        margin-top: 400px;
+    }
+    
+    #colorPicker {
+        margin-left: 10px;
+    }
+    </style>
+    </head>
+    <body id="container">
+    <div>
+        <label for="colorPicker">Choose a color:</label>
+        <input type="color" id="colorPicker">
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded" // waiting for the DOM to load before running the script // 
+        , function() {
+        const colorPicker = document.getElementById("colorPicker");
+        const container = document.getElementById("container");
+    
+        colorPicker.addEventListener("input",
+        function() {
+        const colour = colorPicker.value;
+        container.style.backgroundColor = colour;
+        });
+    });
+    </script>
+    </body>
+    </html>

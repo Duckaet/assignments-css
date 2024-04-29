@@ -1,0 +1,66 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumping Ball Toggle Button</title>
+    <style>
+    .container {
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    .ball {
+        width: 100px;
+        height: 100px;
+        background-color: #3498db;
+        border-radius: 50%;
+        margin: 50px auto;
+        background-image:  radial-gradient(black 30%, transparent 30%);
+        transition : transform 0.5s ease;
+    }
+
+    .jumping {
+        animation: jump 0.5s ease infinite alternate;
+    }
+
+    @keyframes jump {
+        from {
+        transform: translateY(0);
+        }
+        to {
+        transform: translateY(-100px);
+        }
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    </style>
+    </head>
+    <body>
+
+    <div class="container">
+    <h1>Jumping Ball</h1>
+    <div class="ball" id="ball"></div>
+    <button onclick="toggleJumping()">Start Jumping</button>
+    </div>
+
+    <script>
+    let isJumping = false;
+
+    function toggleJumping() {
+        const ball = document.getElementById('ball');
+        isJumping = !isJumping;
+        if (isJumping) {
+        ball.classList.add('jumping');
+        } else {
+        ball.classList.remove('jumping');
+        }
+    }
+    </script>
+
+    </body>
+    </html>
